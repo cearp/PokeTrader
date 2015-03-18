@@ -1,0 +1,14 @@
+# -*- coding: utf-8 
+
+from datetime import datetime
+
+def get_email():
+    if auth.user:
+        return auth.user.email
+    else:
+        return 'None'
+
+db.define_table('post',
+   Field('user_id', db.auth_user),
+   Field('date_posted', 'datetime'),
+   Field('body', 'text'))

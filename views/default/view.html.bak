@@ -1,0 +1,14 @@
+{{left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())}}
+{{extend 'layout.html'}}
+
+{{=form}}
+{{if len(comments):}}
+  <h2>Comments</h2><br /><p>
+  {{for reply in comments:}}
+    <p>{{=reply.user_id}} says <i>{{=reply.body}}</i></p>
+  {{pass}}</p>
+{{else:}}
+  <h2>No comments posted yet</h2>
+{{pass}}
+<h2>Post a comment</h2>
+{{=reply}}

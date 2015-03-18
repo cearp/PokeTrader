@@ -1,0 +1,9 @@
+{{left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())}}
+{{extend 'layout.html'}}
+
+{{for post in posts:}}
+<div style="background: #f0f0f0; margin-bottom: 5px; padding: 8px;">
+ {{=name_of(post.user_id)}} on {{=post.date_posted}}:
+  <h2>Looking For: {{=LI(A(post.title, _href=URL('view', args=post.id)))}}</h2>
+</div>
+{{pass}}
